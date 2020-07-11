@@ -1,0 +1,19 @@
+name: 'String Variable Substitution'
+author: 'Andreas Nel'
+description: 'Replaces variables in the given string.'
+branding:
+    color: 'green'
+    icon: 'edit'
+inputs:
+    variables:
+        description: 'Key value pairs of the variable name and the value that it should have.'
+        required: true
+    instring:
+        description: 'The string containing the variable names.'
+        required: true
+outputs:
+    outstring:
+        description: 'The string after substituting the variables.'
+runs:
+    using: 'node12'
+    main: 'dist/index.js'

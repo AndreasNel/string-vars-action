@@ -1,0 +1,40 @@
+{
+  "name": "pr-vars-action",
+  "version": "1.0.0",
+  "description": "An action to replace variables in a given string.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "test": "npm run-script lint && jest",
+    "package": "npm run-script test && ncc build index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreasNel/string-vars-action.git"
+  },
+  "keywords": [
+    "action",
+    "pr",
+    "description",
+    "issue",
+    "variables",
+    "substitution"
+  ],
+  "author": "Andreas Nel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndreasNel/string-vars-action/issues"
+  },
+  "homepage": "https://github.com/AndreasNel/string-vars-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.1.0"
+  }
+}
