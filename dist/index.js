@@ -76,7 +76,13 @@ function replaceVars(instring, vars) {
 }
 
 try {
-    const variables = core.getInput('variables');
+    const prefix = 'STRVAR_';
+    const variables = {};
+    Object.keys(process.env)
+        .filter(key => key.startsWith(prefix))
+        .forEach(key => (
+            variables[key.slice(prefix.length).toLowerCase()] = process.env[key]
+        ));
     const input = core.getInput('instring');
     core.setOutput('outstring', replaceVars(input, variables));
 } catch (error) {
