@@ -1,4 +1,8 @@
 # string-vars-action
+
+![automated-tests](https://github.com/AndreasNel/string-vars-action/workflows/automated-tests/badge.svg)
+![dist](https://github.com/AndreasNel/string-vars-action/workflows/dist/badge.svg)
+
 An action to replace variables in a given string.
 
 It expects a string containing any number of placeholders, and then attempts to populate them from the currently available environment variables.
