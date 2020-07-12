@@ -76,7 +76,7 @@ function replaceVars(instring, vars) {
 }
 
 try {
-    const prefix = 'STRVAR_';
+    const prefix = core.getInput('prefix');
     const variables = {};
     Object.keys(process.env)
         .filter(key => key.startsWith(prefix))

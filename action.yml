@@ -12,6 +12,10 @@ inputs:
     instring:
         description: 'The string containing the variable names.'
         required: true
+    prefix:
+        description: 'The prefix for the variables.'
+        required: false
+        default: ''
 outputs:
     outstring:
         description: 'The string after substituting the variables.'
