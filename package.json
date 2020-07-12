@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint index.js",
     "test": "npm run-script lint && jest",
-    "package": "npm run-script test && ncc build index.js -o dist"
+    "package": "npm run-script lint && ncc build index.js -o dist"
   },
   "repository": {
     "type": "git",
@@ -32,8 +32,6 @@
   "devDependencies": {
     "@zeit/ncc": "^0.22.3",
     "eslint": "^7.4.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.22.0",
     "jest": "^26.1.0"
   }
