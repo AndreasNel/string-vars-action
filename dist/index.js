@@ -68,7 +68,6 @@ function replaceVars(instring, vars) {
     if (!(vars instanceof Object)) {
         throw Error('Variable configuration is not an object');
     }
-
     const replacer = (match, varname) => vars[varname];
     const regexStr = `\\{(${Object.keys(vars).join('|')})\\}`;
     const regex = new RegExp(regexStr, 'gu');
