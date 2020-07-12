@@ -6,6 +6,7 @@ on:
             - '**.js'
             - '**.yml'
             - 'package.json'
+            - '!dist/**'
 jobs:
     create-dist:
         runs-on: ubuntu-latest
