@@ -20,7 +20,7 @@ try {
     Object.keys(process.env)
         .filter(key => key.startsWith(prefix))
         .forEach(key => (
-            variables[key.slice(prefix.length).toLowerCase()] = process.env[key]
+            variables[key.slice(prefix.length)] = process.env[key]
         ));
     const input = core.getInput('instring');
     core.setOutput('outstring', replaceVars(input, variables));
