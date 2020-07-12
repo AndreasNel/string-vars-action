@@ -8,7 +8,7 @@ inputs:
     # Add this if Github starts allowing structured data for inputs.
     # variables:
     #     description: 'Key value pairs of the variable name and the value that it should have.'
-    #     required: true
+    #     required: false
     instring:
         description: 'The string containing the variable names.'
         required: true
