@@ -17,8 +17,10 @@ jobs:
             - id: dist
               name: Create Dist File
               run: |
-                  npm i --dev
+                  npm i
                   npm run-script package
+                  git config user.name "Github Action"
+                  git config user.email "action@github.com"
                   git diff -s --exit-code dist/index.js
                   echo ::set-output name=has_changed::$?
                   git commit -m "Auto-generate dist" -a
