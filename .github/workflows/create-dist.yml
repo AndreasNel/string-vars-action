@@ -1,0 +1,29 @@
+name: dist
+on:
+    push:
+        branches: master
+        paths:
+            - '**.js'
+            - '**.yml'
+            - 'package.json'
+jobs:
+    create-dist:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2.3.1
+              with:
+                  fetch-depth: 0
+                  token: ${{ secrets.DIST_TOKEN }}
+            - id: dist
+              name: Create Dist File
+              run: |
+                  npm i --dev
+                  npm run-script package
+                  git diff -s --exit-code dist/index.js
+                  echo ::set-output name=has_changed::$?
+                  git commit -m "Auto-generate dist" -a
+            - name: Push Dist File
+              if: steps.dist.outputs.has_changed == 1
+              uses: ad-m/github-push-action@v0.6.0
+              with:
+                  github_token: ${{ secrets.DIST_TOKEN }}
