@@ -1,4 +1,4 @@
-name: 'AndreasNel/string-vars-action'
+name: 'Replace Variables in String'
 author: 'Andreas Nel'
 description: 'Replaces variables in the given string.'
 branding:
