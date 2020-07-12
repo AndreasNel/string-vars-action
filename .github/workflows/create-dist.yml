@@ -15,18 +15,19 @@ jobs:
               with:
                   fetch-depth: 0
                   token: ${{ secrets.DIST_TOKEN }}
-            - name: Check Dist Exists
+            - id: dist
+              name: Check Dist Exists
               run: |
                   npm i
                   npm run-script package
                   git config user.name "Github Action"
                   git config user.email "action@github.com"
-                  git diff -s --exit-code dist/index.js
+                  echo ::set-output name=filename::$(git diff --name-only dist/index.js)
             - name: Commit Dist
-              if: failure()
+              if: steps.dist.outputs.filename == 'dist/index.js'
               run: git commit -m "Auto-generate dist" -a
             - name: Push Dist File
-              if: failure()
+              if: steps.dist.outputs.filename == 'dist/index.js'
               uses: ad-m/github-push-action@v0.6.0
               with:
                   github_token: ${{ secrets.DIST_TOKEN }}
