@@ -4,7 +4,6 @@ function replaceVars(instring, vars) {
     if (typeof instring !== 'string') {
         throw Error('Non-string input given');
     }
-
     if (!(vars instanceof Object)) {
         throw Error('Variable configuration is not an object');
     }
