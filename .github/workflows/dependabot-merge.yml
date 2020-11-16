@@ -14,7 +14,7 @@ jobs:
         needs: approve
         steps:
             - name: Merge Comment
-              uses: actions-ecosystem/action-create-comment@v1.0.1
+              uses: actions-ecosystem/action-create-comment@v1.0.2
               with:
                   github_token: ${{ secrets.DIST_TOKEN }}
                   body: "@dependabot merge"
