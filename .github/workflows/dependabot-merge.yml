@@ -16,5 +16,5 @@ jobs:
             - name: Merge Comment
               uses: actions-ecosystem/action-create-comment@v1.0.2
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  github_token: ${{ secrets.DIST_TOKEN }}
                   body: "@dependabot merge"
