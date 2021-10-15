@@ -8,7 +8,7 @@ jobs:
     unit-test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2.3.4
+            - uses: actions/checkout@v2.3.5
             - name: Unit Tests
               run: |
                   npm i
