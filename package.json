@@ -33,6 +33,6 @@
     "@zeit/ncc": "^0.22.3",
     "eslint": "^8.19.0",
     "eslint-plugin-import": "^2.26.0",
-    "jest": "^28.1.1"
+    "jest": "^28.1.2"
   }
 }
