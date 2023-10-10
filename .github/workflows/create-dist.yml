@@ -29,6 +29,6 @@ jobs:
               run: git commit -m "Auto-generate dist" -a
             - name: Push Dist File
               if: steps.dist.outputs.filename == 'dist/index.js'
-              uses: ad-m/github-push-action@v0.6.0
+              uses: ad-m/github-push-action@v0.8.0
               with:
                   github_token: ${{ secrets.DIST_TOKEN }}
