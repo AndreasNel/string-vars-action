@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/AndreasNel/string-vars-action#readme",
   "dependencies": {
-    "@actions/core": "^2.0.1"
+    "@actions/core": "^2.0.2"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.22.3",
